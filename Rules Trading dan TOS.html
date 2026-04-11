@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOS & Strategi Eksekusi - Grand Master SN</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #e6edf3;
+            --gold: #ffcc00;
+            --red: #ff4444;
+            --green: #00cc66;
+            --navy: #161b22;
+            --blue: #0099ff;
+            --purple: #9933ff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+        h1 {
+            color: var(--gold);
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px dashed var(--gold);
+            padding-bottom: 15px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #8b949e;
+            font-size: 1.1em;
+            margin-bottom: 40px;
+        }
+        .highlight { color: var(--gold); font-weight: bold; }
+        
+        /* Grid Layout untuk 4 Strategi */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        /* Card Styling */
+        .card {
+            background-color: var(--navy);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+        }
+        
+        /* Warna Khusus Tiap Strategi */
+        .card-lt::before { background-color: var(--blue); }
+        .card-wk::before { background-color: var(--purple); }
+        .card-id::before { background-color: var(--red); }
+        .card-sn::before { background-color: var(--green); }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        .card-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin: 0;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .badge-safe { background-color: rgba(0, 204, 102, 0.2); color: var(--green); border: 1px solid var(--green); }
+        .badge-warn { background-color: rgba(255, 68, 68, 0.2); color: var(--red); border: 1px solid var(--red); }
+        
+        .card-body ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .card-body li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .card-body li::before {
+            content: "👉";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Conclusion Box */
+        .conclusion-box {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border: 2px solid var(--gold);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .conclusion-box h2 {
+            color: var(--gold);
+            margin-top: 0;
+        }
+        .rule-item {
+            display: inline-block;
+            width: 45%;
+            margin: 10px 2%;
+            vertical-align: top;
+            background-color: #111;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+        .rule-safe { border-color: var(--green); }
+        .rule-warn { border-color: var(--red); }
+
+        @media (max-width: 768px) {
+            .strategy-grid { grid-template-columns: 1fr; }
+            .rule-item { width: 90%; display: block; margin: 10px auto; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📜 T.O.S & STRATEGY GUIDE</h1>
+    <div class="subtitle">Aturan Eksekusi Baku - Grand Master Sunda Nuswantara OS</div>
+
+    <div class="strategy-grid">
+        
+        <div class="card card-lt">
+            <div class="card-header">
+                <p class="card-title" style="color: var(--blue);">1. LONGTERM</p>
+                <span class="badge badge-safe">Anti-Repaint</span>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><strong>Sifat Sinyal:</strong> Sangat langka & permanen. Bahkan mungkin tidak akan muncul dalam sebulan atau satu kuartal.</li>
+                    <li><strong>Fokus Utama:</strong> Pantau terus kehadiran sinyal ini karena ini adalah peluang Emas pergerakan masif jangka panjang.</li>
+                    <li><strong>Aturan Eksekusi:</strong> Sekalinya muncul, <span class="highlight">persiapkan margin dengan matang!</span> Sinyal ini ditujukan untuk menahan <em>long-range running</em> (pergerakan ratusan hingga ribuan pips).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card card-wk">
+            <div class="card-header">
+                <p class="card-title" style="color: var(--purple);">2. WEEKLY SWING</p>
+                <span class="badge badge-safe">Anti-Repaint</span>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><strong>Sifat Sinyal:</strong> Jangka menengah, ditentukan di awal pembukaan market mingguan (Bullish/Bearish).</li>
+                    <li><strong>Aturan Hold:</strong> Tahan posisi ini hingga penutupan market di akhir minggu.</li>
+                    <li><strong>Ekspansi:</strong> Bila memungkinkan dan didukung fundamental kuat, maksimalkan posisi Weekly ini menjadi <em>Longterm trending</em>.</li>
+                    <li><strong>Kelebihan:</strong> Anda hanya memegang risiko (Risk) di awal buka posisi saja. Setelah terkonfirmasi, potensi <em>reward</em> sangat panjang.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card card-id">
+            <div class="card-header">
+                <p class="card-title" style="color: var(--red);">3. INTRADAY TACTICAL</p>
+                <span class="badge badge-warn">Rawan Repaint</span>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><strong>Sifat Sinyal:</strong> Sangat dinamis dan luwes. Siklus bisa naik dan turun berganti arah dalam satu hari yang sama.</li>
+                    <li><strong>Aturan TP/SL:</strong> Tidak ada ketetapan baku untuk Risk dan Reward. Tutup posisi secara manual berdasarkan kondisi market.</li>
+                    <li><strong>Syarat Wajib Eksekusi:</strong> HANYA gunakan sinyal ini ketika arah tren harian <strong>selaras dengan posisi Weekly</strong> (Akan sangat sempurna jika selaras juga dengan Monthly).</li>
+                    <li><strong>Filter Tenaga:</strong> Ambil peluang ini hanya bila indikator BENSIN belum jenuh (Maksimal tenaga untuk eksekusi adalah <strong>200%</strong>).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card card-sn">
+            <div class="card-header">
+                <p class="card-title" style="color: var(--green);">4. SNIPER SETUP</p>
+                <span class="badge badge-warn">Rawan Repaint</span>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><strong>Sifat Sinyal:</strong> Jangka sangat pendek (Scalping/Fast Tactical). Peluang muncul cukup sering namun rawan terpental balik.</li>
+                    <li><strong>Syarat Keberhasilan:</strong> Akurasi tinggi / potensi terkena TP yang besar HANYA TERJADI jika posisi Sniper <strong>selaras dengan tren Weekly dan Intraday</strong>. Jangan melawannya!</li>
+                    <li><strong>Filter Momentum:</strong> Sebelum klik entry, pastikan indikator <strong>BENSIN belum habis</strong> dan <strong>SPEED VELOCITY</strong> sedang dalam kondisi tinggi (pergerakan kencang).</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="conclusion-box">
+        <h2>⚖️ KESIMPULAN GRAND MASTER</h2>
+        <p style="font-size: 1.1em; color: #ccc; margin-bottom: 25px;">Sistem ini membagi medan perang menjadi dua karakter utama yang tidak boleh dicampuradukkan pengelolaannya:</p>
+        
+        <div>
+            <div class="rule-item rule-safe">
+                <h3 style="color: var(--green); margin-top: 0;">Posisi Fundamental</h3>
+                <p><strong>(Longterm & Weekly)</strong></p>
+                <p style="font-size: 0.9em; color: #aaa;">Bersifat kokoh dan <strong>ANTI-REPAINT</strong>. Sinyal ini adalah fondasi utama arah akun Anda. Jika muncul, siapkan margin dan beranikan diri untuk *hold* secara maksimal.</p>
+            </div>
+            
+            <div class="rule-item rule-warn">
+                <h3 style="color: var(--red); margin-top: 0;">Posisi Taktikal</h3>
+                <p><strong>(Intraday & Sniper)</strong></p>
+                <p style="font-size: 0.9em; color: #aaa;">Bersifat <strong>RAWAN REPAINT</strong>. Ini adalah 2 posisi eksekusi cepat yang <strong>membutuhkan pertimbangan matang</strong>. Wajib selaras dengan tren di atasnya dan filter Bensin sebelum klik OP!</p>
+            </div>
+        </div>
+        
+        <p style="margin-top: 30px; font-weight: bold; color: var(--gold); font-size: 1.2em;">"Disiplin pada TOS ini adalah pemisah antara Penjudi dan Trader Profesional."</p>
+    </div>
+
+</div>
+
+</body>
+</html>
