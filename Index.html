@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMFKL Simple MT5 - Indikator Trading Automated Mapping Area</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            bg: '#0a0e17',
+                            card: '#111827',
+                            border: '#1f293d',
+                            cyan: '#00f0ff',
+                            blue: '#0072ff',
+                            gold: '#ffb700',
+                            accent: '#3b82f6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #080c14;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+        }
+        .glow-cyan {
+            text-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+        }
+        .glow-gold {
+            text-shadow: 0 0 12px rgba(255, 183, 0, 0.6);
+        }
+        .box-glow {
+            box-shadow: 0 0 25px -5px rgba(0, 240, 255, 0.15);
+        }
+        .box-glow-hover:hover {
+            box-shadow: 0 0 30px 0px rgba(0, 240, 255, 0.3);
+            border-color: #00f0ff;
+        }
+    </style>
+</head>
+<body class="bg-cyber-bg text-slate-200 antialiased selection:bg-cyan-500 selection:text-black">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-cyber-bg/80 border-b border-cyber-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyber-blue to-cyber-cyan flex items-center justify-center text-black font-extrabold text-xl shadow-lg shadow-cyan-500/30">
+                    G
+                </div>
+                <span class="text-2xl font-black tracking-wider text-white">GMFKL <span class="text-cyber-cyan">MT5</span></span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-300">
+                <a href="#fitur" class="hover:text-cyber-cyan transition-colors">Fitur Utama</a>
+                <a href="#harga" class="hover:text-cyber-cyan transition-colors">Harga Token</a>
+                <a href="#kelebihan" class="hover:text-cyber-cyan transition-colors">Kelebihan</a>
+                <a href="#saran" class="hover:text-cyber-cyan transition-colors">Saran Pemakaian</a>
+            </nav>
+            <div>
+                <div class="flex items-center space-x-3">
+                    <a href="https://forms.gle/HnTNPWqkKTRGfW1q8" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/40 font-bold hover:bg-amber-500 hover:text-black transition-all">
+                        <i class="fa-solid fa-key mr-1"></i> Beli Token
+                    </a>
+                    <a href="https://drive.google.com/file/d/13nsUrMLiCdSuqzXRlk8o5Dz8wmkTLn3h/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyber-cyan to-cyber-blue text-black font-bold hover:brightness-110 transition-all shadow-lg shadow-cyan-500/20">
+                        Unduh Indikator
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative py-12 md:py-20 overflow-hidden">
+        <!-- Background Glow FX -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyber-cyan/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-cyber-gold/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text -->
+                <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyber-cyan/10 border border-cyber-cyan/30 text-cyber-cyan text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-bolt text-cyber-gold mr-1"></i> 100% Automated Mapping Indicator
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
+                        Trading Lebih Simpel & Presisi dengan <span class="bg-gradient-to-r from-cyber-cyan via-blue-400 to-cyber-gold bg-clip-text text-transparent glow-cyan">GMFKL Simple MT5</span>
+                    </h1>
+                    <p class="text-slate-400 text-lg sm:text-xl font-normal leading-relaxed">
+                        Solusi mutakhir untuk memetakan zonasi <span class="text-white font-semibold">Supply & Demand</span> serta <span class="text-white font-semibold">Key Area</span> secara otomatis langsung di chart MetaTrader 5 Anda.
+                    </p>
+                    
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="https://drive.google.com/file/d/13nsUrMLiCdSuqzXRlk8o5Dz8wmkTLn3h/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyber-cyan to-cyber-blue text-slate-950 font-extrabold text-lg hover:shadow-cyan-500/40 hover:shadow-2xl hover:-translate-y-0.5 transition-all flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-download"></i>
+                            <span>Unduh Indikator</span>
+                        </a>
+                        <a href="https://forms.gle/HnTNPWqkKTRGfW1q8" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-amber-500/20 border border-amber-500/50 text-amber-400 hover:bg-amber-500 hover:text-slate-950 font-extrabold text-lg transition-all flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-key"></i>
+                            <span>Beli Token</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="pt-8 border-t border-cyber-border/60 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <div class="text-2xl font-bold text-white">MT5</div>
+                            <div class="text-xs text-slate-400">Kompatibilitas</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-cyber-cyan">Auto</div>
+                            <div class="text-xs text-slate-400">Mapping Area</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-cyber-gold">All Pairs</div>
+                            <div class="text-xs text-slate-400">Forex, Gold, Crypto</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image / Cover Preview -->
+                <div class="lg:col-span-6">
+                    <div class="relative group rounded-2xl p-2 bg-gradient-to-b from-cyber-cyan/30 via-cyber-border to-transparent box-glow">
+                        <div class="relative overflow-hidden rounded-xl bg-cyber-card">
+                            <img 
+                                src="watermarked_img_16929689887011947639.jpg" 
+                                alt="GMFKL Simple MT5 Mapping Area Indicator Cover" 
+                                class="w-full h-auto object-cover rounded-xl transform group-hover:scale-105 transition-transform duration-500"
+                                onerror="this.onerror=null; this.src='https://placehold.co/1280x720/0a0e17/00f0ff?text=GMFKL+Simple+MT5+Mapping+Area';"
+                            />
+                            <div class="absolute bottom-4 left-4 right-4 bg-cyber-bg/90 backdrop-blur-md p-4 rounded-xl border border-cyber-border flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></div>
+                                    <span class="text-sm font-semibold text-slate-200">Visual Indicator Active</span>
+                                </div>
+                                <span class="text-xs px-2.5 py-1 rounded bg-cyber-cyan/20 text-cyber-cyan font-mono border border-cyber-cyan/30">v1.0 Ready</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SAMPLE VIDEO YOUTUBE SECTION -->
+    <section class="py-16 bg-cyber-bg border-t border-cyber-border/50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <h2 class="text-xs font-bold text-cyber-cyan uppercase tracking-widest mb-2">Video Panduan</h2>
+                <p class="text-3xl font-extrabold text-white">Sample Preview & Cara Kerja Indikator</p>
+            </div>
+            
+            <div class="p-3 sm:p-4 rounded-2xl bg-cyber-card border border-cyber-cyan/30 box-glow overflow-hidden">
+                <div class="relative w-full overflow-hidden rounded-xl pt-[56.25%] bg-black">
+                    <iframe 
+                        class="absolute top-0 left-0 w-full h-full border-0" 
+                        src="https://www.youtube.com/embed/p4PuZAjqSZA?si=Fd3EZn-NtK8W1h3y" 
+                        title="YouTube video player" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TABEL HARGA TOKEN & PROMO BANNER SECTION -->
+    <section id="harga" class="py-16 bg-cyber-card/40 border-t border-cyber-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30 text-xs font-bold uppercase tracking-wider">
+                    Pilihan Paket Aktivasi
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-3">Daftar Harga Token Akses</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Pilih durasi masa aktif token yang paling sesuai dengan kebutuhan trading Anda</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- TABEL HARGA TOKEN -->
+                <div class="lg:col-span-7">
+                    <div class="bg-cyber-card border border-cyber-border rounded-2xl p-6 shadow-2xl overflow-hidden box-glow">
+                        <div class="flex items-center justify-between border-b border-cyber-border pb-4 mb-4">
+                            <h3 class="text-lg font-bold text-white flex items-center">
+                                <i class="fa-solid fa-tags text-cyber-gold mr-2"></i> Durasi & Harga Token
+                            </h3>
+                            <span class="text-xs text-cyber-cyan font-mono bg-cyber-cyan/10 px-2.5 py-1 rounded border border-cyber-cyan/30">Instant Key Access</span>
+                        </div>
+
+                        <div class="space-y-3">
+                            <!-- Tier 1 -->
+                            <div class="flex items-center justify-between p-3.5 rounded-xl bg-cyber-bg hover:bg-slate-800/80 transition-all border border-slate-800 hover:border-cyber-cyan/50 group">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-lg bg-slate-800 group-hover:bg-cyber-cyan/20 text-slate-300 group-hover:text-cyber-cyan flex items-center justify-center font-bold text-xs transition-colors">
+                                        7D
+                                    </div>
+                                    <div>
+                                        <div class="text-white font-semibold text-sm sm:text-base">Masa Aktif 7 Hari</div>
+                                        <div class="text-xs text-slate-500">Trial / Short Term</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="text-right">
+                                        <div class="text-cyber-cyan font-extrabold text-base sm:text-lg">Rp 79.000</div>
+                                    </div>
+                                    <a href="https://forms.gle/HnTNPWqkKTRGfW1q8" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-400 border border-amber-500/40 text-xs font-bold hover:bg-amber-500 hover:text-black transition-all">
+                                        Beli
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Tier 2 -->
+                            <div class="flex items-center justify-between p-3.5 rounded-xl bg-cyber-bg hover:bg-slate-800/80 transition-all border border-slate-800 hover:border-cyber-cyan/50 group">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-lg bg-slate-800 group-hover:bg-cyber-cyan/20 text-slate-300 group-hover:text-cyber-cyan flex items-center justify-center font-bold text-xs transition-colors">
+                                        14D
+                                    </div>
+                                    <div>
+                                        <div class="text-white font-semibold text-sm sm:text-base">Masa Aktif 14 Hari</div>
+                                        <div class="text-xs text-slate-500">2 Minggu Akses</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="text-right">
+                                        <div class="text-cyber-cyan font-extrabold text-base sm:text-lg">Rp 149.000</div>
+                                    </div>
+                                    <a href="https://forms.gle/HnTNPWqkKTRGfW1q8" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-400 border border-amber-500/40 text-xs font-bold hover:bg-amber-500 hover:text-black transition-all">
+                                        Beli
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Tier 3 -->
+                            <div class="flex items-center justify-between p-3.5 rounded-xl bg-cyber-bg hover:bg-slate-800/80 transition-all border border-slate-800 hover:border-cyber-cyan/50 group">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-lg bg-slate-800 group-hover:bg-cyber-cyan/20 text-slate-300 group-hover:text-cyber-cyan flex items-center justify-center font-bold text-xs transition-colors">
+                                        21D
+                                    </div>
+                                    <div>
+                                        <div class="text-white font-semibold text-sm sm:text-base">Masa Aktif 21 Hari</div>
+                                        <div class="text-xs text-slate-500">3 Minggu Akses</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="text-right">
+                                        <div class="text-cyber-cyan font-extrabold text-base sm:text-lg">Rp 219.000</div>
+                                    </div>
+                                    <a href="https://forms.gle/HnTNPWqkKTRGfW1q8" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-400 border border-amber-500/40 text-xs font-bold hover:bg-amber-500 hover:text-black transition-all">
+                                        Beli
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Tier 4 -->
+                            <div class="flex items-center justify-between p-3.5 rounded-xl bg-cyber-bg hover:bg-slate-800/80 transition-all border border-slate-800 hover:border-cyber-cyan/50 group">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-lg bg-slate-800 group-hover:bg-cyber-cyan/20 text-slate-300 group-hover:text-cyber-cyan flex items-center justify-center font-bold text-xs transition-colors">
+                                        28D
+                                    </div>
+                                    <div>
+                                        <div class="text-white font-semibold text-sm sm:text-base">Masa Aktif 28 Hari</div>
+                                        <div class="text-xs text-slate-500">4 Minggu Akses</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="text-right">
+                                        <div class="text-cyber-cyan font-extrabold text-base sm:text-lg">Rp 289.000</div>
+                                    </div>
+                                    <a href="https://forms.gle/HnTNPWqkKTRGfW1q8" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-400 border border-amber-500/40 text-xs font-bold hover:bg-amber-500 hover:text-black transition-all">
+                                        Beli
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Tier 5 (POPULAR / BEST VALUE) -->
+                            <div class="flex items-center justify-between p-3.5 rounded-xl bg-gradient-to-r from-amber-500/10 via-cyber-card to-cyber-bg border-2 border-amber-500/60 shadow-lg relative overflow-hidden group">
+                                <div class="absolute -right-8 -top-8 w-20 h-20 bg-amber-500/20 rounded-full blur-lg pointer-events-none"></div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-black flex items-center justify-center text-xs">
+                                        30D
+                                    </div>
+                                    <div>
+                                        <div class="text-white font-bold text-sm sm:text-base flex items-center">
+                                            Masa Aktif 30 Hari 
+                                            <span class="ml-2 text-[10px] bg-amber-500 text-black px-1.5 py-0.5 rounded font-black uppercase">Favorit</span>
+                                        </div>
+                                        <div class="text-xs text-amber-400/80">Paket Paling Laris (1 Bulan)</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="text-right">
+                                        <div class="text-cyber-gold font-extrabold text-lg sm:text-xl glow-gold">Rp 309.000</div>
+                                    </div>
+                                    <a href="https://forms.gle/HnTNPWqkKTRGfW1q8" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-amber-500 text-black font-extrabold text-xs hover:bg-amber-400 transition-all shadow-md shadow-amber-500/20">
+                                        Beli Token
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Tier 6 -->
+                            <div class="flex items-center justify-between p-3.5 rounded-xl bg-cyber-bg hover:bg-slate-800/80 transition-all border border-slate-800 hover:border-cyber-cyan/50 group">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-lg bg-slate-800 group-hover:bg-cyber-cyan/20 text-slate-300 group-hover:text-cyber-cyan flex items-center justify-center font-bold text-xs transition-colors">
+                                        60D
+                                    </div>
+                                    <div>
+                                        <div class="text-white font-semibold text-sm sm:text-base">Masa Aktif 60 Hari</div>
+                                        <div class="text-xs text-slate-500">Hemat Paket 2 Bulan</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="text-right">
+                                        <div class="text-cyber-cyan font-extrabold text-base sm:text-lg">Rp 609.000</div>
+                                    </div>
+                                    <a href="https://forms.gle/HnTNPWqkKTRGfW1q8" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-400 border border-amber-500/40 text-xs font-bold hover:bg-amber-500 hover:text-black transition-all">
+                                        Beli
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Tier 7 -->
+                            <div class="flex items-center justify-between p-3.5 rounded-xl bg-cyber-bg hover:bg-slate-800/80 transition-all border border-slate-800 hover:border-cyber-cyan/50 group">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-lg bg-slate-800 group-hover:bg-cyber-cyan/20 text-slate-300 group-hover:text-cyber-cyan flex items-center justify-center font-bold text-xs transition-colors">
+                                        90D
+                                    </div>
+                                    <div>
+                                        <div class="text-white font-semibold text-sm sm:text-base">Masa Aktif 90 Hari</div>
+                                        <div class="text-xs text-slate-500">Paket Maksimal 3 Bulan</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="text-right">
+                                        <div class="text-cyber-cyan font-extrabold text-base sm:text-lg">Rp 909.000</div>
+                                    </div>
+                                    <a href="https://forms.gle/HnTNPWqkKTRGfW1q8" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-400 border border-amber-500/40 text-xs font-bold hover:bg-amber-500 hover:text-black transition-all">
+                                        Beli
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Info Bottom -->
+                        <div class="mt-5 pt-4 border-t border-cyber-border/70 text-center">
+                            <a href="https://forms.gle/HnTNPWqkKTRGfW1q8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-cyber-gold hover:underline font-bold text-sm">
+                                <span>Klik disini untuk isi Form Pembelian Token</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BANNER PROMOSI SPG / MODEL -->
+                <div class="lg:col-span-5">
+                    <div class="relative group rounded-2xl p-2 bg-gradient-to-b from-amber-500/30 via-cyber-border to-cyber-cyan/20 box-glow overflow-hidden">
+                        <div class="relative rounded-xl overflow-hidden bg-cyber-card">
+                            <img 
+                                src="watermarked_img_4699272692189411333.jpg" 
+                                alt="GMFKL Simple MT5 Promo Host" 
+                                class="w-full h-auto object-cover rounded-xl transform group-hover:scale-105 transition-transform duration-500"
+                                onerror="this.onerror=null; this.src='https://placehold.co/600x800/0a0e17/00f0ff?text=Customer+Support+GMFKL';"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6">
+                                <div class="space-y-2">
+                                    <span class="inline-block px-3 py-1 rounded-full bg-cyber-cyan text-black font-extrabold text-xs uppercase tracking-wider">
+                                        Fast Response 24/7
+                                    </span>
+                                    <h4 class="text-2xl font-black text-white leading-snug">Butuh Bantuan Token?</h4>
+                                    <p class="text-xs text-slate-300">
+                                        Sistem aktivasi aman & cepat. Setelah melakukan pemesanan via Form, token akan dikirimkan langsung ke kontak Anda.
+                                    </p>
+                                    <div class="pt-2">
+                                        <a href="https://forms.gle/HnTNPWqkKTRGfW1q8" target="_blank" rel="noopener noreferrer" class="w-full block py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 text-center font-extrabold text-sm hover:brightness-110 transition-all shadow-lg shadow-amber-500/30">
+                                            <i class="fa-solid fa-headset mr-2"></i> Order Token Sekarang
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FITUR UTAMA SECTION -->
+    <section id="fitur" class="py-16 bg-cyber-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-cyber-cyan uppercase tracking-widest mb-2">Fitur Unggulan</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Segala Yang Anda Butuhkan Untuk Mapping Serba Otomatis</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-6 rounded-2xl bg-cyber-card border border-cyber-border box-glow-hover transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-cyber-cyan/10 text-cyber-cyan flex items-center justify-center text-2xl mb-4 border border-cyber-cyan/20">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Automated Area Mapping</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Indikator menggambar area Support/Resistance & Demand/Supply secara realtime tanpa membebankan mata Anda.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-6 rounded-2xl bg-cyber-card border border-cyber-border box-glow-hover transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-cyber-blue/10 text-cyber-blue flex items-center justify-center text-2xl mb-4 border border-cyber-blue/20">
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Clean Chart Visual</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Desain visual bersih (*uncluttered*) dengan warna transparan sehingga grafik harga tetap mudah dibaca.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-6 rounded-2xl bg-cyber-card border border-cyber-border box-glow-hover transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-cyber-gold/10 text-cyber-gold flex items-center justify-center text-2xl mb-4 border border-cyber-gold/20">
+                        <i class="fa-solid fa-crosshairs"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Multi-Timeframe Support</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Sangat responsif digunakan pada TF M15, H1, H4, hingga Daily untuk gaya Scalping, Intraday, maupun Swing Trading.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KELEBIHAN SECTION -->
+    <section id="kelebihan" class="py-16 bg-cyber-card/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <h2 class="text-xs font-bold text-cyber-gold uppercase tracking-widest">Mengapa GMFKL MT5?</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Efisiensi Analisis hingga 80% Lebih Cepat
+                    </h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        Buang waktu berjam-jam hanya untuk menandai chart. Dengan GMFKL Simple MT5, begitu Anda membuka chart, peta perdagangan langsung tersaji dengan jelas.
+                    </p>
+                    
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start space-x-3">
+                            <div class="p-1 rounded bg-emerald-500/20 text-emerald-400 mt-1">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Praktis Tanpa Coret-Coret Manual</h4>
+                                <p class="text-slate-400 text-sm">Menghemat energi analisis harian Anda.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="p-1 rounded bg-emerald-500/20 text-emerald-400 mt-1">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Sangat Cocok untuk Pemula & Pro</h4>
+                                <p class="text-slate-400 text-sm">Interfase intuitif yang langsung bisa dipahami dalam hitungan menit.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="p-1 rounded bg-emerald-500/20 text-emerald-400 mt-1">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Mengurangi Bias Psikologis</h4>
+                                <p class="text-slate-400 text-sm">Menghilangkan keraguan area entri karena didasarkan pada perhitungan matematis obyektif.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="p-6 rounded-2xl bg-cyber-card border border-cyber-border">
+                            <i class="fa-solid fa-brain text-3xl text-cyber-cyan mb-4"></i>
+                            <h4 class="text-lg font-bold text-white mb-2">Objektif & Konsisten</h4>
+                            <p class="text-slate-400 text-sm">Menghilangkan ketakutan (FOMO) dan ragu-ragu saat hendak membuka posisi trading.</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-cyber-card border border-cyber-border">
+                            <i class="fa-solid fa-desktop text-3xl text-cyber-blue mb-4"></i>
+                            <h4 class="text-lg font-bold text-white mb-2">Ringan di MT5</h4>
+                            <p class="text-slate-400 text-sm">Dioptimalkan agar tidak membuat platform MetaTrader 5 Anda menjadi lag atau berat.</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-cyber-card border border-cyber-border sm:col-span-2">
+                            <i class="fa-solid fa-sliders text-3xl text-cyber-gold mb-4"></i>
+                            <h4 class="text-lg font-bold text-white mb-2">Kustomisasi Mudah</h4>
+                            <p class="text-slate-400 text-sm">Anda bisa menyesuaikan sensitivitas pemetaan dan warna zona sesuai dengan preferensi gaya trading masing-masing.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSPARANSI & KEKURANGAN -->
+    <section id="catatan" class="py-16 bg-cyber-card/30 border-y border-cyber-border/50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-amber-500/10 via-cyber-card to-amber-500/10 border border-amber-500/30 rounded-2xl p-8">
+                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl flex-shrink-0">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Catatan Transparansi & Limiting Factor</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Kami percaya pada transparansi. Indikator ini adalah alat bantu (*tools*), bukan mesin pencetak uang ajaib.
+                        </p>
+                        <ul class="list-disc list-inside text-slate-400 text-sm space-y-2">
+                            <li><strong class="text-slate-200">Perlu Dasar Price Action:</strong> Hasil penggunaan akan jauh lebih efektif jika Anda memahami konsep dasar pergerakan harga dan struktur pasar.</li>
+                            <li><strong class="text-slate-200">Tidak 100% Akurat:</strong> Tidak ada indikator tunggal di dunia trading yang sempurna tanpa celah. Tetap perhatikan berita ekonomi (*high impact news*).</li>
+                            <li><strong class="text-slate-200">Manajemen Risiko Mutlak:</strong> Keberhasilan trading tetap ditentukan oleh *Money Management* dan ketahanan modal Anda.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SARAN PEMAKAIAN (BEST PRACTICES) -->
+    <section id="saran" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-cyber-cyan uppercase tracking-widest mb-2">Panduan Penggunaan</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Saran Pemakaian Terbaik (Best Practices)</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Langkah 1 -->
+                <div class="p-6 rounded-2xl bg-cyber-card border border-cyber-border relative overflow-hidden">
+                    <div class="text-6xl font-black text-slate-800/50 absolute top-2 right-4">01</div>
+                    <div class="relative z-10">
+                        <span class="inline-block px-3 py-1 bg-cyber-cyan/10 text-cyber-cyan text-xs font-bold rounded-lg mb-4">Timeframe</span>
+                        <h3 class="text-lg font-bold text-white mb-2">Pilih Timeframe Sesuai</h3>
+                        <p class="text-slate-400 text-sm">Gunakan Timeframe <strong class="text-white">H1 / H4</strong> untuk pemetaan zona utama, dan gunakan <strong class="text-white">M15</strong> untuk mencari konfirmasi entri presisi.</p>
+                    </div>
+                </div>
+
+                <!-- Langkah 2 -->
+                <div class="p-6 rounded-2xl bg-cyber-card border border-cyber-border relative overflow-hidden">
+                    <div class="text-6xl font-black text-slate-800/50 absolute top-2 right-4">02</div>
+                    <div class="relative z-10">
+                        <span class="inline-block px-3 py-1 bg-cyber-blue/10 text-cyber-blue text-xs font-bold rounded-lg mb-4">Konfirmasi</span>
+                        <h3 class="text-lg font-bold text-white mb-2">Tunggu Reaksi Harga</h3>
+                        <p class="text-slate-400 text-sm">Jangan langsung instant order saat harga menyentuh zona. Tunggu pola konfirmasi candlestick seperti Engulfing atau Pinbar di dalam area mapping.</p>
+                    </div>
+                </div>
+
+                <!-- Langkah 3 -->
+                <div class="p-6 rounded-2xl bg-cyber-card border border-cyber-border relative overflow-hidden">
+                    <div class="text-6xl font-black text-slate-800/50 absolute top-2 right-4">03</div>
+                    <div class="relative z-10">
+                        <span class="inline-block px-3 py-1 bg-cyber-gold/10 text-cyber-gold text-xs font-bold rounded-lg mb-4">Risiko</span>
+                        <h3 class="text-lg font-bold text-white mb-2">Pasang SL & TP Terukur</h3>
+                        <p class="text-slate-400 text-sm">Selalu tempatkan Stop Loss sedikit di luar area mapping dan tentukan Take Profit realistis dengan *Risk to Reward Ratio* minimal 1:2.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD / CTA SECTION -->
+    <section id="download" class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-cyber-blue/20 via-transparent to-transparent pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="p-10 sm:p-16 rounded-3xl bg-cyber-card border border-cyber-cyan/30 box-glow space-y-6">
+                <h2 class="text-3xl sm:text-5xl font-black text-white">Siap Tingkatkan Kualitas Trading Anda?</h2>
+                <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
+                    Dapatkan indikator <span class="text-cyber-cyan font-bold">GMFKL Simple MT5</span> sekarang dan rasakan kemudahan analisis teknikal modern.
+                </p>
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://drive.google.com/file/d/13nsUrMLiCdSuqzXRlk8o5Dz8wmkTLn3h/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-10 py-4 rounded-xl bg-gradient-to-r from-cyber-cyan to-cyber-blue text-black font-extrabold text-lg hover:shadow-cyan-500/50 hover:shadow-2xl transition-all inline-flex items-center justify-center">
+                        <i class="fa-solid fa-download mr-2"></i> Unduh Indikator MT5
+                    </a>
+                    <a href="https://forms.gle/HnTNPWqkKTRGfW1q8" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-10 py-4 rounded-xl bg-amber-500/20 border border-amber-500/50 text-amber-400 hover:bg-amber-500 hover:text-black font-extrabold text-lg transition-all inline-flex items-center justify-center">
+                        <i class="fa-solid fa-key mr-2"></i> Beli Token
+                    </a>
+                </div>
+                <p class="text-xs text-slate-500 mt-4">Format File: .ex5 / .mq5 | Kompatibel dengan MetaTrader 5 Desktop</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 border-t border-cyber-border text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; 2026 GMFKL Simple MT5. All Rights Reserved.</p>
+            <p class="mt-2 text-slate-600">Disclaimer: Perdagangan valuta asing (Forex) dan CFD memiliki tingkat risiko yang tinggi dan mungkin tidak cocok untuk semua investor.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
